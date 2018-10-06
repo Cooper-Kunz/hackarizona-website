@@ -189,7 +189,6 @@ const Index = () => (
             </ProjectCard>
             <ProjectCard
               title="Artificial Intelligence"
-              link="https://www.behance.net/gallery/43907099/Tomb-Raider"
               bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
             >
               Best overall hack involving artificial intelligence
