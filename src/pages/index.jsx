@@ -176,37 +176,37 @@ const Index = () => (
           <ProjectsWrapper>
             <ProjectCard
               title="Social Good"
-              bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
+              bg="linear-gradient(to right, #141E30 0%, #243B55 100%)"
             >
               Hack that could contribute the most social good
             </ProjectCard>
             <ProjectCard
               title="Blockchain / DLT"
-              bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
+              bg="linear-gradient(to right, #141E30 0%, #243B55 100%)"
             >
               Best Dapp, blockchain, or distributed ledger project
             </ProjectCard>
             <ProjectCard
               title="Artificial Intelligence"
-              bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
+              bg="linear-gradient(to right, #141E30 0%, #243B55 100%)"
             >
               Best overall hack involving artificial intelligence
             </ProjectCard>
             <ProjectCard
               title="AR / VR"
-              bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
+              bg="linear-gradient(to right, #141E30 0%, #243B55 100%)"
             >
               Most interesting implementation of artificial or virtual reality
             </ProjectCard>
             <ProjectCard
               title="Cybersecurity"
-              bg="linear-gradient(to right, #FFAF7B 0%, #3A1C71 100%)"
+              bg="linear-gradient(to right, #141E30 0%, #243B55 100%)"
             >
               Most surprising cybersecurity project
             </ProjectCard>
             <ProjectCard
               title="Hardware/robotics"
-              bg="linear-gradient(to right, #000C40 0%, #F0F2F0  100%)"
+              bg="linear-gradient(to right, #141E30 0%, #243B55 100%)"
             >
               Best use of hardware.<br/> We like self driving things, in particular!
             </ProjectCard>

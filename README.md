@@ -35,8 +35,17 @@ Check your development environment! You'll need [Node.js](https://nodejs.org/en/
 - [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
 - [Check your development environment](https://www.gatsbyjs.org/tutorial/part-zero/)
 
+### Running in development
 
-### Building the site
+```
+gatsby develop
+```
+
+### Building the site for production (in your own projects)
+
+Note: to deploy to hackarizona.org, submit a pull request to this repository. 
+
+The rest of the notes are if you want to use the template that was used to make this website:
 
 ```
 npm run build
