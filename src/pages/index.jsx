@@ -267,7 +267,7 @@ const Index = () => (
             </AboutSub>
           </AboutHero>
           <AboutDesc>
-            <p>We host a yearly hackathon at the University of Arizona, and we're currently working on our 2019 event, which will take place January 18-20 at UofA's Science and Engineering Libary. Check back soon for more updates about the 5th year of Hack Arizona, including: this years theme/colors, sponsors, prize cateogires, and event registration!</p>
+            <p>We host a yearly hackathon at the University of Arizona, and we're currently working on our 2019 event, which will take place January 18-20 at UofA's Science and Engineering Libary. Check back soon for more updates about the 5th year of Hack Arizona, including: this years theme/colors, sponsors, prize categories, and event registration!</p>
           </AboutDesc>
         </Inner>
       </Content>
@@ -299,7 +299,7 @@ const Index = () => (
         </Inner>
         <Footer>
           <p>© Hack Arizona, Inc. 2018</p>
-          <p><a href="#"> Open sourced</a> and <a href="#">MIT licensed</a></p>
+          <p><a href="https://github.com/Cooper-Kunz/hackarizona-website"> Open sourced</a> and <a href="https://github.com/Cooper-Kunz/hackarizona-website/blob/master/LICENSE">MIT licensed</a></p>
         </Footer>
       </Content>
       <Divider speed={0.1} offset={4}>
