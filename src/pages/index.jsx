@@ -12,7 +12,6 @@ import { rotate, UpDown, UpDownWide, waveAnimation } from '../styles/animations'
 import { hidden } from '../styles/utils';
 import { colors } from '../../tailwind';
 import triangle from '../images/triangle.svg';
-import packet from '../images/sponsorship.pdf';
 import '../styles/global';
 
 const Divider = styled(ParallaxLayer)`
