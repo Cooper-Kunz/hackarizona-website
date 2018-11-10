@@ -20,11 +20,14 @@ const SEO = () => {
   return (
     <Helmet>
       <html lang={config.siteLanguage} />
-      <title>Hack Arizona</title>
+      <title>Hack Arizona | The largest hackathon in the Southwest</title>
+      <meta name="description" content='Hack Arizona is the largest hackathon in the Southwest. January 18-20, 2019. Learn more and register now!' />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicons/hacktus-favicon.png" />
+      <meta property="og:locale" content={config.ogLanguage} />
+      <meta property="og:site_name" content='Hack Arizona' />
+      <meta property="og:image" content={image} />
       {/* 
       <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
       <link rel="shortcut icon" href="/favicons/favicon.ico" />
       <meta name="msapplication-TileColor" content={config.backgroundColor} />
       <meta name="msapplication-config" content="browserconfig.xml" />

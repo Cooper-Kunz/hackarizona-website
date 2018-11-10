@@ -1,5 +1,6 @@
 /* global tw */
 import React from 'react';
+import Link from 'gatsby-link';
 import styled from 'react-emotion';
 import { Parallax, ParallaxLayer } from 'react-spring';
 import 'typeface-cantata-one';
@@ -13,6 +14,7 @@ import { hidden } from '../styles/utils';
 import { colors } from '../../tailwind';
 import triangle from '../images/triangle.svg';
 import '../styles/global';
+import BannerImage from '../../static/images/Banner-Transparent.png'
 
 const Divider = styled(ParallaxLayer)`
   ${tw('absolute w-full h-full')};
@@ -33,6 +35,33 @@ const Content = styled(ParallaxLayer)`
 
 const Hero = styled.div`
   ${tw('w-full xl:w-2/3')};
+  display: flex;
+  flex-direction: row;
+
+  @media screen and (max-width: 1000px){
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 500px) and (max-height: 800px){
+    margin-top: 300px;
+  }
+`;
+
+const HeroContent = styled.div`
+  flex: 1;
+  margin: auto;
+`;
+
+const HeroImage = styled.img`
+  flex: 1;
+  max-width: 300px;
+  height: 500px;
+  margin: auto;
+
+  @media screen and (max-width: 500px) and (max-height: 600px) {
+    display: none
+  }
+
 `;
 
 const Inner = styled.div`
@@ -63,6 +92,14 @@ const Title = styled.h1`
 const Subtitle = styled.p`
   ${tw('text-2xl lg:text-4xl font-sans text-white mt-8 xxl:w-3/4')};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+`;
+
+const RegistrationCTA = styled.a`
+  ${tw('text-2xl lg:text-4xl font-sans mt-8 xxl:w-3/4')};
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  color: #e09638; /* this year's orange */
+  cursor: pointer;
+  z-index: 10;
 `;
 
 const ProjectsWrapper = styled.div`
@@ -104,6 +141,10 @@ const AboutDesc = styled.p`
   ${tw('text-grey-light text-lg md:text-xl lg:text-2xl font-sans pt-6 md:pt-12')};
 `;
 
+const RegisterLink = styled.span`
+  text-align: center;
+`
+
 const ContactText = styled.p`
   ${tw('text-grey-light font-sans text-xl md:text-2xl lg:text-3xl')};
   a {
@@ -120,48 +161,56 @@ const Footer = styled.footer`
   }
 `;
 
+const RegLink = 'https://airtable.com/shrXWfagMcHHGnhVI'
+
 const Index = () => (
   <React.Fragment>
     <SEO />
     <Parallax pages={5}>
       <Divider speed={0.2} offset={0}>
         <UpDown>
-          <SVG icon="triangle" className={hidden} width={48} stroke={colors.orange} left="10%" top="20%" />
-          <SVG icon="hexa" width={48} stroke={colors.red} left="60%" top="70%" />
+          <SVG icon="triangle" className={hidden} width={48} stroke={colors['orange-darkest']} left="10%" top="20%" />
+          <SVG icon="hexa" width={48} stroke={colors['grey-darkest']} left="60%" top="70%" />
           <SVG icon="box" width={6} fill={colors['grey-darker']} left="60%" top="15%" />
         </UpDown>
         <UpDownWide>
           <SVG icon="arrowUp" className={hidden} width={16} fill={colors['blue-dark']} left="80%" top="10%" />
-          <SVG icon="triangle" width={12} stroke={colors.white} left="90%" top="50%" />
-          <SVG icon="circle" width={16} fill={colors['grey-darker']} left="70%" top="90%" />
-          <SVG icon="triangle" width={16} stroke={colors['grey-darkest']} left="30%" top="65%" />
-          <SVG icon="circle" width={6} fill={colors['grey-darkest']} left="75%" top="10%" />
-          <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="45%" top="10%" />
+          <SVG icon="triangle" width={12} stroke={colors['blue-light']} left="90%" top="50%" />
+          <SVG icon="circle" width={16} fill={colors['orange-dark']} left="70%" top="90%" />
+          <SVG icon="triangle" width={16} stroke={colors['blue-light']} left="30%" top="65%" />
+          <SVG icon="circle" width={6} fill={colors['orange-darkest']} left="75%" top="10%" />
+          <SVG icon="upDown" className={hidden} width={8} fill={colors['orange-darkest']} left="45%" top="10%" />
         </UpDownWide>
-        <SVG icon="circle" className={hidden} width={24} fill={colors['grey-darker']} left="5%" top="70%" />
-        <SVG icon="circle" width={6} fill={colors['grey-darkest']} left="4%" top="20%" />
+        <SVG icon="circle" className={hidden} width={24} fill={colors["blue-light"]} left="5%" top="70%" />
+        <SVG icon="circle" width={6} fill={colors['blue-dark']} left="4%" top="20%" />
         <SVG icon="circle" width={12} fill={colors['grey-darkest']} left="50%" top="60%" />
-        <SVG icon="upDown" width={8} fill={colors['grey-darkest']} left="95%" top="90%" />
+        <SVG icon="upDown" width={8} fill={colors['blue-light']} left="95%" top="90%" />
         <SVG icon="upDown" className={hidden} width={24} fill={colors['grey-darker']} left="40%" top="80%" />
-        <SVG icon="triangle" width={8} stroke={colors['grey-darker']} left="25%" top="5%" />
-        <SVG icon="circle" width={64} fill={colors.green} left="95%" top="5%" />
-        <SVG icon="box" className={hidden} width={64} fill={colors.purple} left="5%" top="90%" />
-        <SVG icon="box" width={6} fill={colors['grey-darkest']} left="10%" top="10%" />
-        <SVG icon="box" width={12} fill={colors['grey-darkest']} left="40%" top="30%" />
-        <SVG icon="hexa" width={16} stroke={colors['grey-darker']} left="10%" top="50%" />
-        <SVG icon="hexa" width={8} stroke={colors['grey-darker']} left="80%" top="70%" />
+        <SVG icon="triangle" width={8} stroke={colors['blue-light']} left="25%" top="5%" />
+        <SVG icon="circle" width={64} fill={colors['orange-darkest']} left="95%" top="5%" />
+        <SVG icon="box" className={hidden} width={64} fill={colors['orange-dark']} left="5%" top="90%" />
+        <SVG icon="box" width={6} fill={colors['orange-darkest']} left="10%" top="10%" />
+        <SVG icon="box" width={12} fill={colors['blue-light']} left="40%" top="30%" />
+        <SVG icon="hexa" width={16} stroke={colors['blue-light']} left="10%" top="50%" />
+        <SVG icon="hexa" width={8} stroke={colors['orange-dark']} left="80%" top="70%" />
       </Divider>
       <Content speed={0.4} offset={0}>
         <Hero>
-          <BigTitle>
-            Hack Arizona
-          </BigTitle>
-          <Subtitle> 
-            1,000+ attendees <br/>
-            Jan. 18-20th, 2019 <br/>
-            University of Arizona <br/>
-            Science-Engineering Library
-          </Subtitle>
+          <HeroContent>
+            <BigTitle>
+              Hack Arizona
+            </BigTitle>
+            <Subtitle> 
+              1,000+ attendees <br/>
+              Jan. 18-20, 2019<br/>
+              University of Arizona <br/>
+              Science-Engineering Library
+            </Subtitle>
+            <RegistrationCTA target="_blank" href={RegLink}>
+              Register now!
+            </RegistrationCTA>
+          </HeroContent>
+          <HeroImage src={BannerImage}/>
         </Hero>
       </Content>
       <DividerMiddle
@@ -172,7 +221,7 @@ const Index = () => (
       />
       <Content speed={0.4} offset={1.2} factor={2}>
         <Inner>
-          <Title>This year's categories include:</Title>
+          <Title>This year's challenge categories include:</Title>
           <ProjectsWrapper>
             <ProjectCard
               title="Social Good"
@@ -215,58 +264,61 @@ const Index = () => (
       </Content>
       <Divider speed={0.1} offset={1} factor={2}>
         <UpDown>
-          <SVG icon="box" width={6} fill={colors.white} left="85%" top="75%" />
-          <SVG icon="upDown" width={8} fill={colors.teal} left="70%" top="20%" />
+          <SVG icon="box" width={6} fill={colors['blue-light']} left="85%" top="75%" />
+          <SVG icon="upDown" width={8} fill={colors.orange} left="70%" top="20%" />
           <SVG icon="triangle" width={8} stroke={colors.orange} left="25%" top="5%" />
-          <SVG icon="circle" className={hidden} width={24} fill={colors.white} left="17%" top="60%" />
+          <SVG icon="circle" className={hidden} width={24} fill={colors.orange} left="17%" top="60%" />
         </UpDown>
         <UpDownWide>
-          <SVG icon="arrowUp" className={hidden} width={16} fill={colors.green} left="20%" top="90%" />
-          <SVG icon="triangle" width={12} stroke={colors.white} left="90%" top="30%" />
-          <SVG icon="circle" width={16} fill={colors.yellow} left="70%" top="90%" />
-          <SVG icon="triangle" className={hidden} width={16} stroke={colors.teal} left="18%" top="75%" />
-          <SVG icon="circle" width={6} fill={colors.white} left="75%" top="10%" />
-          <SVG icon="upDown" className={hidden} width={8} fill={colors.green} left="45%" top="10%" />
+          <SVG icon="arrowUp" className={hidden} width={16} fill={colors.orange} left="20%" top="90%" />
+          <SVG icon="triangle" width={12} stroke={colors['orange-dark']} left="90%" top="30%" />
+          <SVG icon="circle" width={16} fill={colors.orange} left="70%" top="90%" />
+          <SVG icon="triangle" className={hidden} width={16} stroke={colors['orange-dark']} left="18%" top="75%" />
+          <SVG icon="circle" width={6} fill={colors['blue-light']} left="75%" top="10%" />
+          <SVG icon="upDown" className={hidden} width={8} fill={colors.orange} left="45%" top="10%" />
         </UpDownWide>
-        <SVG icon="circle" width={6} fill={colors.white} left="4%" top="20%" />
-        <SVG icon="circle" width={12} fill={colors.pink} left="80%" top="60%" />
+        <SVG icon="circle" width={6} fill={colors['orange-dark']} left="4%" top="20%" />
+        <SVG icon="circle" width={12} fill={colors['orange-dark']} left="80%" top="60%" />
         <SVG icon="box" width={6} fill={colors.orange} left="10%" top="10%" />
-        <SVG icon="box" width={12} fill={colors.yellow} left="29%" top="26%" />
-        <SVG icon="hexa" width={16} stroke={colors.red} left="75%" top="30%" />
-        <SVG icon="hexa" width={8} stroke={colors.yellow} left="80%" top="70%" />
+        <SVG icon="box" width={12} fill={colors['orange-dark']} left="29%" top="26%" />
+        <SVG icon="hexa" width={16} stroke={colors['orange-dark']} left="75%" top="30%" />
+        <SVG icon="hexa" width={8} stroke={colors['orange-dark']} left="80%" top="70%" />
       </Divider>
       <Divider bg="#23262b" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={3} />
       <Divider speed={0.1} offset={3}>
         <UpDown>
-          <SVG icon="box" className={hidden} width={6} fill={colors.blue} left="50%" top="75%" />
-          <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
-          <SVG icon="triangle" width={8} stroke={colors['grey-darkest']} left="25%" top="5%" />
+          <SVG icon="box" className={hidden} width={6} fill={colors['orange-darker']} left="50%" top="75%" />
+          <SVG icon="upDown" className={hidden} width={8} fill={colors['orange-dark']} left="70%" top="20%" />
+          <SVG icon="triangle" width={8} stroke={colors['orange-darker']} left="25%" top="5%" />
           <SVG icon="upDown" className={hidden} width={24} fill={colors.orange} left="80%" top="80%" />
         </UpDown>
         <UpDownWide>
-          <SVG icon="arrowUp" className={hidden} width={16} fill={colors.purple} left="5%" top="80%" />
-          <SVG icon="triangle" width={12} stroke={colors.white} left="95%" top="50%" />
-          <SVG icon="circle" width={6} fill={colors.white} left="85%" top="15%" />
-          <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="45%" top="10%" />
+          <SVG icon="arrowUp" className={hidden} width={16} fill={colors['orange-dark']} left="5%" top="80%" />
+          <SVG icon="triangle" width={12} stroke={colors['blue-light']} left="95%" top="50%" />
+          <SVG icon="circle" width={6} fill={colors['blue-light']} left="85%" top="15%" />
+          <SVG icon="upDown" className={hidden} width={8} fill={colors['blue-dark']} left="45%" top="10%" />
         </UpDownWide>
-        <SVG icon="circle" width={6} fill={colors.white} left="4%" top="20%" />
-        <SVG icon="circle" width={12} fill={colors['grey-darkest']} left="70%" top="60%" />
+        <SVG icon="circle" width={6} fill={colors['blue-light']} left="4%" top="20%" />
+        <SVG icon="circle" width={12} fill={colors['orange-dark']} left="70%" top="60%" />
         <SVG icon="box" width={6} fill={colors.orange} left="10%" top="10%" />
-        <SVG icon="box" width={12} fill={colors['grey-darkest']} left="20%" top="30%" />
-        <SVG icon="hexa" width={8} stroke={colors['grey-darkest']} left="80%" top="70%" />
+        <SVG icon="box" width={12} fill={colors['blue-dark']} left="20%" top="30%" />
+        <SVG icon="hexa" width={8} stroke={colors['blue-dark']} left="80%" top="70%" />
       </Divider>
       <Content speed={0.4} offset={3}>
         <Inner>
           <Title id="about">About Hack Arizona</Title>
           <AboutHero>
             <AboutSub>
-              Hack Arizona is a student lead organization
-              fostering a world class hacker culture in the southwest.
+              Hack Arizona is a free 36 hour collegiate hackathon where teams of up to four compete to win prizes; all while attending fun activities and lots of educational sessions.
             </AboutSub>
           </AboutHero>
           <AboutDesc>
-            <p>We host a yearly hackathon at the University of Arizona, and we're currently working on our 2019 event, which will take place January 18-20 at UofA's Science and Engineering Libary. Check back soon for more updates about the 5th year of Hack Arizona, including: this years theme/colors, sponsors, prize categories, and event registration!</p>
+            Hack Arizona is January 18-20th, 2019, located throughout all 5 spacious stories of UofA's Science-Engineering Library. 
+            The event is free and we provide you with free snacks and meals, swag, hardware to hack on, and prizes you can win throughout the weekend. 
+            <br/><br/> Our full website for Hack Arizona 2019 will be launching soon with more details.
           </AboutDesc>
+          <br/>
+          <RegistrationCTA target="_blank" href={RegLink}>Register for Hack Arizona 2019 now!</RegistrationCTA>
         </Inner>
       </Content>
       <Divider fill="#23262b" speed={0.2} offset={4}>
@@ -289,31 +341,32 @@ const Index = () => (
         <Inner>
           <Title id="sponsor">Contact us</Title>
           <ContactText>
-            Email us at <a href="mailto:team@hackarizona.org">team@hackarizona.org</a> with any general questions or to learn about our 2019 sponsorship packages.<br/><br/>Or find us on other platforms, including: {' '}
-            <a href="https://twitter.com/hack_arizona">Twitter</a>, 
+            Email us at <a href="mailto:team@hackarizona.org">team@hackarizona.org</a> with any general questions or to learn about our 2019 sponsorship packages.<br/><br/>
+            Be sure to check out our event on: {' '}
+            <a href="https://twitter.com/hack_arizona">Twitter</a>,  {' '}
             <a href="https://www.youtube.com/channel/UC94vU02OOICGg9FyR_6NSpA">Youtube</a>, or {' '}
             <a href="https://www.facebook.com/hackarizona/">Facebook.</a>
           </ContactText>
         </Inner>
         <Footer>
-          <p>© Hack Arizona, Inc. 2018</p>
+          <p>© Hack Arizona, Inc. 2015-2018</p>
           <p><a href="https://github.com/Cooper-Kunz/hackarizona-website"> Open sourced</a> and <a href="https://github.com/Cooper-Kunz/hackarizona-website/blob/master/LICENSE">MIT licensed</a></p>
         </Footer>
       </Content>
       <Divider speed={0.1} offset={4}>
         <UpDown>
-          <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
-          <SVG icon="triangle" width={8} stroke={colors['grey-darkest']} left="25%" top="5%" />
+          <SVG icon="upDown" className={hidden} width={8} fill={colors['orange-dark']} left="70%" top="20%" />
+          <SVG icon="triangle" width={8} stroke={colors['blue-light']} left="25%" top="5%" />
         </UpDown>
         <UpDownWide>
-          <SVG icon="triangle" width={12} stroke={colors.white} left="95%" top="50%" />
-          <SVG icon="circle" width={6} fill={colors.white} left="85%" top="15%" />
+          <SVG icon="triangle" width={12} stroke={colors['blue-light']} left="95%" top="50%" />
+          <SVG icon="circle" width={6} fill={colors['blue-light']} left="85%" top="15%" />
           <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="45%" top="10%" />
         </UpDownWide>
-        <SVG icon="circle" width={6} fill={colors.white} left="4%" top="20%" />
-        <SVG icon="circle" width={12} fill={colors['grey-darkest']} left="70%" top="60%" />
-        <SVG icon="box" width={12} fill={colors['grey-darkest']} left="20%" top="30%" />
-        <SVG icon="hexa" width={8} stroke={colors['grey-darkest']} left="80%" top="70%" />
+        <SVG icon="circle" width={6} fill={colors['blue-light']} left="4%" top="20%" />
+        <SVG icon="circle" width={12} fill={colors['orange-dark']} left="70%" top="60%" />
+        <SVG icon="box" width={12} fill={colors.orange} left="20%" top="30%" />
+        <SVG icon="hexa" width={8} stroke={colors['blue-dark']} left="80%" top="70%" />
       </Divider>
     </Parallax>
   </React.Fragment>
