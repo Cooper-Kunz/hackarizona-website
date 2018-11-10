@@ -12,7 +12,6 @@ function InitializeGA () {
 }
 
 const SEO = () => {
-  InitializeGA()
   const title = config.siteTitle;
   const description = config.siteDescription;
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
