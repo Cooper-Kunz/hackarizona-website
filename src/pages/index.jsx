@@ -141,7 +141,7 @@ const AboutDesc = styled.p`
   ${tw('text-grey-light text-lg md:text-xl lg:text-2xl font-sans pt-6 md:pt-12')};
 `;
 
-const RegisterLink = styled.span`
+const ApplyLink = styled.span`
   text-align: center;
 `
 
@@ -207,7 +207,7 @@ const Index = () => (
               Science-Engineering Library
             </Subtitle>
             <RegistrationCTA target="_blank" href={RegLink}>
-              Register now!
+              Apply now!
             </RegistrationCTA>
           </HeroContent>
           <HeroImage src={BannerImage}/>
@@ -318,7 +318,7 @@ const Index = () => (
             <br/><br/> Our full website for Hack Arizona 2019 will be launching soon with more details.
           </AboutDesc>
           <br/>
-          <RegistrationCTA target="_blank" href={RegLink}>Register for Hack Arizona 2019 now!</RegistrationCTA>
+          <RegistrationCTA target="_blank" href={RegLink}>Apply for Hack Arizona 2019 now!</RegistrationCTA>
         </Inner>
       </Content>
       <Divider fill="#23262b" speed={0.2} offset={4}>
