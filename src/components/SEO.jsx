@@ -1,11 +1,18 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import config from '../../config/website';
+import ReactGA from 'react-ga';
 
 import MetaImage from '../images/meta-image.png'
 import Favicon from '../../static/favicons/favicon.png'
 
+function InitializeGA () {
+  ReactGA.initialize('UA-129015704-1');
+  ReactGA.pageview('/');
+}
+
 const SEO = () => {
+  InitializeGA()
   const title = config.siteTitle;
   const description = config.siteDescription;
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
@@ -38,6 +45,7 @@ const SEO = () => {
       <meta name="twitter:description" content='Hack Arizona is the largest hackathon in the Southwest. January 18-20, 2019. Learn more and register now!'/>
       <meta name="twitter:image" content={MetaImage} />
       <meta name="twitter:card" content={MetaImage}  />
+
       {/* 
       <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
       <link rel="shortcut icon" href="/favicons/favicon.ico" />

@@ -1,5 +1,6 @@
 /* global tw */
 import React from 'react';
+import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
@@ -23,8 +24,8 @@ const Title = styled.div`
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 `;
 
-const ProjectCard = ({ title, link, children, bg }) => (
-  <Wrapper href={link} target="_blank" rel="noopener noreferrer" bg={bg}>
+const ProjectCard = ({ title, children, bg }) => (
+  <Wrapper target="_blank" rel="noopener noreferrer" bg={bg}>
     <Title>{title}</Title>
     <Text>{children}</Text>
   </Wrapper>
@@ -34,7 +35,5 @@ export default ProjectCard;
 
 ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   bg: PropTypes.string.isRequired,
 };

@@ -33,12 +33,12 @@ module.exports = {
         display: 'fullscreen',
         icons: [
           {
-            src: '/favicons/android-chrome-192x192.png',
+            src: '',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/favicons/android-chrome-512x512.png',
+            src: '',
             sizes: '512x512',
             type: 'image/png',
           },
