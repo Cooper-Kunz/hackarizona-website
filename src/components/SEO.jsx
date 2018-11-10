@@ -11,6 +11,21 @@ function InitializeGA () {
   ReactGA.pageview('/');
 }
 
+const BuildFromHTML = () => { 
+  return (`
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129015704-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-129015704-1');
+    </script>
+  `
+  )
+}
+
 const SEO = () => {
   const title = config.siteTitle;
   const description = config.siteDescription;
@@ -44,7 +59,7 @@ const SEO = () => {
       <meta name="twitter:description" content='Hack Arizona is the largest hackathon in the Southwest. January 18-20, 2019. Learn more and register now!'/>
       <meta name="twitter:image" content={MetaImage} />
       <meta name="twitter:card" content={MetaImage}  />
-
+      <div _dangerouslySetInnerHTML={{__html: BuildFromHTML()}}/>
       {/* 
       <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
       <link rel="shortcut icon" href="/favicons/favicon.ico" />
