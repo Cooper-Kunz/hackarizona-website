@@ -1,52 +1,57 @@
-const config = require('./config/website');
-
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
-
 module.exports = {
-  /* General Information */
-  pathPrefix: config.pathPrefix,
   siteMetadata: {
-    siteUrl: config.siteUrl + pathPrefix,
+    title: 'Hack Arizona 2019',
+    author: 'Hack Arizona',
+    description:
+      'The Largest Hackathon in the Southwest | Jan. 18-20, 2019',
+    siteUrl: 'https://hackarizona.org',
   },
-  /* Plugins */
+  pathPrefix: '/',
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-emotion',
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/images/`,
-        name: 'images',
+        path: `${__dirname}/src/data/`,
+        name: 'pages',
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: `gatsby-transformer-remark`,
       options: {
-        name: config.siteTitle,
-        short_name: config.siteTitleAlt,
-        description: config.siteDescription,
-        start_url: config.pathPrefix,
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        display: 'fullscreen',
-        icons: [
+        plugins: [
           {
-            src: '',
-            sizes: '192x192',
-            type: 'image/png',
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
           },
           {
-            src: '',
-            sizes: '512x512',
-            type: 'image/png',
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
           },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
         ],
       },
     },
-    /* Must be placed at the end */
-    'gatsby-plugin-offline',
-    'gatsby-plugin-netlify',
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // trackingId: `ADD GA TRACKING CODE HERE`,
+      },
+    },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography',
+      },
+    },
   ],
-};
+}
