@@ -1,5 +1,5 @@
 ---
-title: Best Begineer Hack
+title: Best Beginner Hack
 company: The Hack Arizona Team
 website: https://hackarizona.org
 teaser: This prize will be awarded to the team that has the most innovative hack, which contains at least 2 team members that have never been to a hackathon before!
