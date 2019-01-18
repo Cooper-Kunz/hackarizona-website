@@ -21,6 +21,12 @@ const NavItem = styled(Link)`
       padding-left: 6px;
     }
   }
+
+
+  @media screen and (max-width: 400px){
+    font-size: 18px;
+  }
+
 `
 
 const FooterContainer = styled.div`
@@ -99,6 +105,7 @@ class Layout extends React.Component {
         <Navbar>
           <NavItem to="/#agenda">Agenda</NavItem>
           <NavItem to="/#sponsors">Sponsors</NavItem>
+          <NavItem to="/#prizes">Prizes</NavItem>
           <NavItem to="/#faq">FAQ</NavItem>
         </Navbar>
       </div>

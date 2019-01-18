@@ -16,13 +16,13 @@ Wordpress2016.overrideThemeStyles = () => ({
     color: 'rgba(255, 175, 75, 1)',
   },
   h1: {
-    color: 'rgba(10, 141, 255, 1)',
+    color: 'white',
   },
   h2: {
-    color: 'rgba(10, 141, 255, 1)',
+    color: 'white',
   },
   h3: {
-    color: 'rgba(10, 141, 255, 1)',
+    color: 'white',
   },
 })
 

@@ -5,16 +5,20 @@ import SpeakerImage from '../assets/Ian_Tracey_Headshot.jpeg'
 
 const Container = styled.div`
   color: white;
-  height: 60vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: 60vw;
+  width: 80vw;
 
   @media screen and (max-width: 900px) {
     height: auto;
     width: auto;
     flex-direction: column;
+  }
+
+  @media screen and (min-width: 1300px){
+    width: 60vw;
   }
 `
 
