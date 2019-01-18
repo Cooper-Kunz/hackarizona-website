@@ -414,7 +414,7 @@ class Index extends React.Component {
                   <p>Prize: {node.frontmatter.prize}</p>
                   <h4 style={{ textAlign: "center" }}>
                     <Link to={node.fields.slug} style={{margin: '8px', lineHeight: '22px'}}>
-                      View this challenge's details!
+                      View the details of this challenge!
                     </Link>
                   </h4>
                 </div>
